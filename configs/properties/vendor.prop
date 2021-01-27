@@ -6,6 +6,7 @@ ro.opengles.version=196609
 
 # Media
 debug.c2.use_dmabufheaps=1
+debug.stagefright.c2inputsurface=-1
 
 # Incremental FS
 ro.incremental.enable=1
