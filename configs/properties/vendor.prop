@@ -5,6 +5,7 @@ ro.hardware.vulkan=pastel
 ro.opengles.version=196609
 
 # Media
+media.c2.hal.selection=aidl
 debug.c2.use_dmabufheaps=1
 debug.stagefright.c2inputsurface=-1
 
