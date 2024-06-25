@@ -7,6 +7,9 @@
 USES_DEVICE_XIAOMI_MI89XX := true
 DEVICE_PATH := device/xiaomi/mi89xx
 
+# A/B
+AB_OTA_UPDATER := false
+
 # Arch
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
