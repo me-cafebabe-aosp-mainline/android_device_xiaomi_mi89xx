@@ -42,6 +42,10 @@ TARGET_SCREEN_HEIGHT := 1280
 # Dalvik heap
 $(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
 
+# DLKM Loader
+PRODUCT_PACKAGES += \
+    dlkm_loader
+
 # Fastbootd
 PRODUCT_PACKAGES += \
     fastbootd
