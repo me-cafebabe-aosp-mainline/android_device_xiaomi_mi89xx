@@ -5,12 +5,12 @@
 //
 
 cc_binary {
-    name: "android.hardware.light-service.xiaomi",
+    name: "android.hardware.light-service.mi89xx",
     defaults: ["hidl_defaults"],
     vendor: true,
     relative_install_path: "hw",
-    init_rc: ["android.hardware.light-service.xiaomi.rc"],
-    vintf_fragments: ["android.hardware.light-service.xiaomi.xml"],
+    init_rc: ["android.hardware.light-service.mi89xx.rc"],
+    vintf_fragments: ["android.hardware.light-service.mi89xx.xml"],
     srcs: [
         "BacklightDevice.cpp",
         "Devices.cpp",
