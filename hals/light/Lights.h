@@ -29,11 +29,6 @@ class Lights : public BnLights {
 
     Devices mDevices;
 
-    HwLightState mLastBatteryState;
-    HwLightState mLastNotificationsState;
-    HwLightState mLastAttentionState;
-    std::mutex mLedMutex;
-
     void updateNotificationColor();
 };
 

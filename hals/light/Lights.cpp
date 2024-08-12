@@ -23,16 +23,6 @@ Lights::Lights() {
     if (mDevices.hasBacklightDevices()) {
         mLights.push_back(AutoHwLight(LightType::BACKLIGHT));
     }
-
-    if (mDevices.hasButtonDevices()) {
-        mLights.push_back(AutoHwLight(LightType::BUTTONS));
-    }
-
-    if (mDevices.hasNotificationDevices()) {
-        mLights.push_back(AutoHwLight(LightType::BATTERY));
-        mLights.push_back(AutoHwLight(LightType::NOTIFICATIONS));
-        mLights.push_back(AutoHwLight(LightType::ATTENTION));
-    }
 }
 
 ndk::ScopedAStatus Lights::setLightState(int32_t id, const HwLightState& state) {
@@ -42,21 +32,6 @@ ndk::ScopedAStatus Lights::setLightState(int32_t id, const HwLightState& state) 
     switch (type) {
         case LightType::BACKLIGHT:
             mDevices.setBacklightColor(color);
-            break;
-        case LightType::BUTTONS:
-            mDevices.setButtonsColor(color);
-            break;
-        case LightType::BATTERY:
-            mLastBatteryState = state;
-            updateNotificationColor();
-            break;
-        case LightType::NOTIFICATIONS:
-            mLastNotificationsState = state;
-            updateNotificationColor();
-            break;
-        case LightType::ATTENTION:
-            mLastAttentionState = state;
-            updateNotificationColor();
             break;
         default:
             return ndk::ScopedAStatus::fromExceptionCode(EX_UNSUPPORTED_OPERATION);
@@ -92,38 +67,6 @@ binder_status_t Lights::dump(int fd, const char** /*args*/, uint32_t /*numArgs*/
 }
 
 void Lights::updateNotificationColor() {
-    std::lock_guard<std::mutex> lock(mLedMutex);
-
-    bool isBatteryLit = rgb(mLastBatteryState.color).isLit();
-    bool isAttentionLit = rgb(mLastAttentionState.color).isLit();
-    bool isNotificationsLit = rgb(mLastNotificationsState.color).isLit();
-
-    const HwLightState state = isNotificationsLit ? mLastNotificationsState
-                               : isAttentionLit   ? mLastAttentionState
-                               : isBatteryLit     ? mLastBatteryState
-                                                  : HwLightState();
-
-    rgb color(state.color);
-
-    LightMode lightMode;
-    switch (state.flashMode) {
-        case FlashMode::NONE:
-            lightMode = LightMode::STATIC;
-            break;
-        case FlashMode::TIMED:
-            lightMode = LightMode::TIMED;
-            break;
-        case FlashMode::HARDWARE:
-            lightMode = LightMode::BREATH;
-            break;
-        default:
-            LOG(ERROR) << "Unknown flash mode: " << static_cast<int>(state.flashMode);
-            lightMode = LightMode::STATIC;
-            break;
-    }
-
-    mDevices.setNotificationColor(color, lightMode, state.flashOnMs, state.flashOffMs);
-
     return;
 }
 

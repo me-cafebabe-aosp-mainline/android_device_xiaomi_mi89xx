@@ -14,9 +14,7 @@ cc_binary {
     srcs: [
         "BacklightDevice.cpp",
         "Devices.cpp",
-        "LedDevice.cpp",
         "Lights.cpp",
-        "RgbLedDevice.cpp",
         "Utils.cpp",
         "service.cpp",
     ],
