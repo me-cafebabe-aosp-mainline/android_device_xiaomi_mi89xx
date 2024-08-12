@@ -99,7 +99,7 @@ on early-boot
     chown system system /sys/class/leds/white/ramp_step_ms
     chown system system /sys/class/leds/white/start_idx
 
-service vendor.light-default /vendor/bin/hw/android.hardware.light-service.xiaomi
+service vendor.light-default /vendor/bin/hw/android.hardware.light-service.mi89xx
     class hal
     user system
     group system
