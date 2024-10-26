@@ -35,8 +35,8 @@ TARGET_USERIMAGES_USE_EXT4 := true
 include device/google/cuttlefish/shared/swiftshader/BoardConfig.mk
 
 # Init
-TARGET_INIT_VENDOR_LIB ?= //$(COMMON_PATH):init_xiaomi_kona
-TARGET_RECOVERY_DEVICE_MODULES ?= init_xiaomi_kona
+TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):init_xiaomi_mi89xx
+TARGET_RECOVERY_DEVICE_MODULES := init_xiaomi_mi89xx
 
 # Kernel
 BOARD_KERNEL_BASE := 0x80000000
