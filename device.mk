@@ -61,10 +61,10 @@ PRODUCT_PACKAGES += \
 # Init
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/fstab/fstab.mi89xx:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.mi89xx \
+    $(LOCAL_PATH)/configs/init/init.common.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.common.usb.rc \
     $(LOCAL_PATH)/configs/init/init.mi8953.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.mi8953.rc \
     $(LOCAL_PATH)/configs/init/init.mi89xx.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.mi89xx.rc \
-    $(LOCAL_PATH)/configs/init/ueventd.rc:$(TARGET_COPY_OUT_VENDOR)/etc/ueventd.rc \
-    device/linaro/dragonboard/init.common.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.common.usb.rc
+    $(LOCAL_PATH)/configs/init/ueventd.rc:$(TARGET_COPY_OUT_VENDOR)/etc/ueventd.rc
 
 # Kernel
 PRODUCT_OTA_ENFORCE_VINTF_KERNEL_REQUIREMENTS := false
