@@ -1,0 +1,8 @@
+# Graphics
+ro.cpuvulkan.version=4202496
+ro.hardware.egl=angle
+ro.hardware.vulkan=pastel
+ro.opengles.version=196609
+
+# Incremental FS
+ro.incremental.enable=1

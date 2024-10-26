@@ -1,0 +1,6 @@
+import /init.recovery.mi89xx.rc
+
+# USB
+on early-init
+    setprop sys.usb.controller 7000000.usb
+    setprop sys.usb.configfs 1

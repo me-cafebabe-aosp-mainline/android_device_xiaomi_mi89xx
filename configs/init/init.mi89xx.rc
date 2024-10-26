@@ -1,0 +1,16 @@
+import /vendor/etc/init/hw/init.common.usb.rc
+
+# Mount
+on fs
+    # Mount everything that does not require fsck
+    mount_all /vendor/etc/fstab.mi89xx --early
+
+on late-fs
+    # Mount RW partitions which need run fsck
+    mount_all /vendor/etc/fstab.mi89xx --late
+
+# Suspend blocker
+service suspend_blocker /vendor/bin/suspend_blocker
+    class early_hal # Start together with system_suspend HAL
+    group system
+    user root
