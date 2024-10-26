@@ -1,0 +1,2 @@
+# Fastbootd (LineageOS specific)
+ro.fastbootd.available=true

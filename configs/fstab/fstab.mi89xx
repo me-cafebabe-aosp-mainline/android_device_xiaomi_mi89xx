@@ -1,0 +1,22 @@
+# Boot
+/dev/block/by-name/boot /boot emmc defaults defaults
+
+# Cache
+/dev/block/by-name/cache /cache ext4 nodev,noatime,nosuid,discard check,formattable
+/dev/block/by-name/cache /cache f2fs nodev,noatime,nosuid,discard check,formattable
+
+# Misc
+/dev/block/by-name/misc /misc emmc defaults defaults
+
+# Recovery
+/dev/block/by-name/recovery /recovery emmc defaults defaults
+
+# System
+/dev/block/by-name/system /system ext4 noatime,ro first_stage_mount
+
+# Userdata
+/dev/block/by-name/userdata /data ext4 nodev,noatime,nosuid,discard latemount,check,quota,formattable,fileencryption
+/dev/block/by-name/userdata /data f2fs nodev,noatime,nosuid,discard,reserve_root=32768 latemount,check,quota,formattable
+
+# Vendor
+/dev/block/by-name/cust /vendor ext4 noatime,ro first_stage_mount

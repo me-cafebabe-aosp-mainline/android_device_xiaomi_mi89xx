@@ -1,0 +1,7 @@
+# Graphics
+/dev/dri/card0		0666	system	graphics
+/dev/dri/controlD64	0666	system	graphics
+/dev/dri/renderD128	0666	system	graphics
+
+# Serial console
+/dev/ttyMSM*	0666	system	system
