@@ -133,7 +133,6 @@ BOARD_VENDOR_SEPOLICY_DIRS += \
     $(DEVICE_PATH)/sepolicy/vendor \
     $(DEVICE_PATH)/sepolicy/vendor/minigbm_msm \
     device/google/cuttlefish/shared/virgl/sepolicy \
-    external/drmfb-composer/sepolicy \
     external/minigbm/cros_gralloc/sepolicy
 
 # VINTF
