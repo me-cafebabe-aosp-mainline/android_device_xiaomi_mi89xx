@@ -6,6 +6,7 @@
 
 # Defines
 TARGET_DISPLAY_USE ?= drm
+TARGET_HAS_BATTERY ?= true
 
 # Audio
 PRODUCT_PACKAGES += \
@@ -91,9 +92,16 @@ PRODUCT_PACKAGES += \
 PRODUCT_REQUIRES_INSECURE_EXECMEM_FOR_SWIFTSHADER := true
 
 # Health
+ifeq ($(TARGET_HAS_BATTERY),true)
+PRODUCT_PACKAGES += \
+    android.hardware.health-service.example \
+    android.hardware.health-service.example_recovery \
+    charger_res_images_vendor
+else
 PRODUCT_PACKAGES += \
     android.hardware.health-service.cuttlefish_recovery \
     com.google.cf.health
+endif
 
 # Init
 PRODUCT_COPY_FILES += \
