@@ -1,0 +1,33 @@
+vendor_public_prop(vendor_minigbm_debug_prop)
+set_prop(vendor_init, vendor_minigbm_debug_prop)
+
+#
+# audit2allow
+#
+
+#============= bootanim ==============
+allow bootanim vendor_minigbm_debug_prop:file { getattr map open read };
+
+#============= hal_graphics_allocator_default ==============
+allow hal_graphics_allocator_default vendor_minigbm_debug_prop:file { getattr map open read };
+
+#============= hal_graphics_composer_default ==============
+allow hal_graphics_composer_default vendor_minigbm_debug_prop:file { getattr map open read };
+
+#============= platform_app ==============
+allow platform_app vendor_minigbm_debug_prop:file { getattr map open read };
+
+#============= priv_app ==============
+allow priv_app vendor_minigbm_debug_prop:file { getattr map open read };
+
+#============= surfaceflinger ==============
+allow surfaceflinger vendor_minigbm_debug_prop:file { getattr map open read };
+
+#============= system_app ==============
+allow system_app vendor_minigbm_debug_prop:file { getattr map open read };
+
+#============= system_server ==============
+allow system_server vendor_minigbm_debug_prop:file { getattr map open read };
+
+#============= untrusted_app_xx ==============
+allow appdomain -isolated_app_all vendor_minigbm_debug_prop:file { getattr map open read };
