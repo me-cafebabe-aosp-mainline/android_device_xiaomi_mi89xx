@@ -86,6 +86,11 @@ TARGET_KERNEL_CONFIG := \
     lineageos/xiaomi-vince.config \
     lineageos/customizations.config
 
+# Kernel modules
+BOARD_VENDOR_KERNEL_MODULES_LOAD := $(strip $(shell cat $(DEVICE_PATH)/configs/modprobe/modules.load.common.drm))
+BOARD_RECOVERY_RAMDISK_KERNEL_MODULES_LOAD := $(strip $(shell cat $(DEVICE_PATH)/configs/modprobe/modules.load.common.drm))
+RECOVERY_KERNEL_MODULES := $(strip $(shell cat $(DEVICE_PATH)/configs/modprobe/modules.include.common.drm))
+
 # OTA
 TARGET_OTA_ASSERT_DEVICE := mi89xx
 
