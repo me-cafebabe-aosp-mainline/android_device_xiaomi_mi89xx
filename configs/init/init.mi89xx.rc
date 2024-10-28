@@ -29,5 +29,7 @@ service suspend_blocker /vendor/bin/suspend_blocker
     user root
 
 # USB
+on property:ro.vendor.device.soc_family=msm8937
+    setprop sys.usb.controller ci_hdrc.0
 on property:ro.vendor.device.soc_family=msm8953
     setprop sys.usb.controller 7000000.usb
