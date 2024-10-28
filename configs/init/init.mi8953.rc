@@ -1,5 +1,0 @@
-import /vendor/etc/init/hw/init.mi89xx.rc
-
-# USB
-on early-init
-    setprop sys.usb.controller 7000000.usb
