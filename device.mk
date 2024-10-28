@@ -4,6 +4,9 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+# Defines
+TARGET_DISPLAY_USE ?= drm
+
 # Audio
 PRODUCT_PACKAGES += \
     android.hardware.audio@7.1-impl \
@@ -51,14 +54,35 @@ PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0-service.software
 
 # Graphics (Composer)
+ifeq ($(TARGET_DISPLAY_USE),drm)
+PRODUCT_PACKAGES += \
+    android.hardware.graphics.composer@2.4-service \
+    hwcomposer.drm
+PRODUCT_VENDOR_PROPERTIES += \
+    ro.hardware.hwcomposer=drm
+else ifeq ($(TARGET_DISPLAY_USE),fb)
 PRODUCT_PACKAGES += \
     android.hardware.graphics.composer@2.1-service
+endif
 
 # Graphics (Gralloc)
+ifeq ($(TARGET_DISPLAY_USE),drm)
+PRODUCT_PACKAGES += \
+    android.hardware.graphics.allocator@4.0-service.minigbm_msm \
+    android.hardware.graphics.mapper@4.0-impl.minigbm_msm \
+    gralloc.minigbm_msm
+PRODUCT_VENDOR_PROPERTIES += \
+    ro.hardware.gralloc=minigbm_msm
+else ifeq ($(TARGET_DISPLAY_USE),fb)
 PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-impl \
     android.hardware.graphics.allocator@2.0-service \
     android.hardware.graphics.mapper@2.0-impl-2.1
+endif
+
+# Graphics (Mesa)
+PRODUCT_PACKAGES += \
+    mesa3d
 
 # Graphics (Swiftshader)
 PRODUCT_PACKAGES += \
