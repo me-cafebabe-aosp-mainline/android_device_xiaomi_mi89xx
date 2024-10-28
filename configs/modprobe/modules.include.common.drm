@@ -1,0 +1,15 @@
+drm_display_helper.ko
+drm_dp_aux_bus.ko
+drm_exec.ko
+drm_kms_helper.ko
+drm.ko
+drm_panel_orientation_quirks.ko
+drm_shmem_helper.ko
+gpu-sched.ko
+msm.ko
+panel-xiaomi-oxygen-r61322.ko
+panel-xiaomi-oxygen-r63350.ko
+panel-xiaomi-td4310-fhdplus-e7.ko
+panel-xiaomi-tianma-nt35596.ko
+panel-xiaomi-uter-td4310_tianma.ko
+ttm.ko
