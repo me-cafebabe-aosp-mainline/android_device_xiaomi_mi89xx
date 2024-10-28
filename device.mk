@@ -73,6 +73,10 @@ PRODUCT_OTA_ENFORCE_VINTF_KERNEL_REQUIREMENTS := false
 PRODUCT_PACKAGES += \
     android.hardware.security.keymint-service
 
+# Light
+PRODUCT_PACKAGES += \
+    android.hardware.light-service.mi89xx
+
 # Overlays
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
