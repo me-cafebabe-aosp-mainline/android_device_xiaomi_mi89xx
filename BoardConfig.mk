@@ -67,6 +67,7 @@ BOARD_KERNEL_APPEND_DTBS := \
 BOARD_KERNEL_CMDLINE := \
     audit=0 \
     console=ttyMSM0,115200n8 \
+    firmware_class.path=/vendor/firmware/ \
     log_buf_len=4M \
     loop.max_part=7 \
     panic=-1 \
