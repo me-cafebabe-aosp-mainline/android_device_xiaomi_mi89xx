@@ -29,6 +29,10 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
 PRODUCT_PACKAGES += \
     fastbootd
 
+# Firmware
+PRODUCT_COPY_FILES += \
+    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/firmware/,$(TARGET_COPY_OUT_VENDOR)/firmware/)
+
 # Gatekeeper
 PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0-service.software
