@@ -56,7 +56,8 @@ BOARD_KERNEL_APPEND_DTBS := \
     qcom/msm8953-xiaomi-mido.dtb \
     qcom/msm8953-xiaomi-oxygen.dtb \
     qcom/msm8953-xiaomi-uter.dtb \
-    qcom/msm8953-xiaomi-vince.dtb
+    qcom/msm8953-xiaomi-vince.dtb \
+    qcom/msm8953-xiaomi-ysl.dtb
 
 BOARD_KERNEL_CMDLINE := \
     audit=0 \
@@ -79,6 +80,7 @@ TARGET_KERNEL_CONFIG := \
     lineageos/xiaomi-oxygen.config \
     lineageos/xiaomi-uter.config \
     lineageos/xiaomi-vince.config \
+    lineageos/xiaomi-ysl.config \
     lineageos/customizations.config
 
 # Kernel modules
