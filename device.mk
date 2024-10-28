@@ -73,11 +73,12 @@ endif
 # Graphics (Gralloc)
 ifeq ($(TARGET_DISPLAY_USE),drm)
 PRODUCT_PACKAGES += \
-    android.hardware.graphics.allocator@4.0-service.minigbm_msm \
-    android.hardware.graphics.mapper@4.0-impl.minigbm_msm \
-    gralloc.minigbm_msm
+    android.hardware.graphics.allocator@2.0-impl \
+    android.hardware.graphics.allocator@2.0-service \
+    android.hardware.graphics.mapper@2.0-impl-2.1 \
+    gralloc.gbm
 PRODUCT_VENDOR_PROPERTIES += \
-    ro.hardware.gralloc=minigbm_msm
+    ro.hardware.gralloc=gbm
 else ifeq ($(TARGET_DISPLAY_USE),fb)
 PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-impl \
