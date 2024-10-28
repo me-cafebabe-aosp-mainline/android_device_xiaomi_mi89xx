@@ -115,8 +115,8 @@ VENDOR_SECURITY_PATCH = $(PLATFORM_SECURITY_PATCH)
 # SELinux
 BOARD_VENDOR_SEPOLICY_DIRS += \
     $(DEVICE_PATH)/sepolicy/vendor \
+    $(DEVICE_PATH)/sepolicy/vendor/minigbm_msm \
     device/google/cuttlefish/shared/virgl/sepolicy \
-    device/linaro/dragonboard/shared/graphics/minigbm_msm/sepolicy \
     external/minigbm/cros_gralloc/sepolicy
 
 # VINTF
