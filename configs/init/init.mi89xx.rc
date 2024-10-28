@@ -9,8 +9,19 @@ on late-fs
     # Mount RW partitions which need run fsck
     mount_all /vendor/etc/fstab.mi89xx --late
 
+# Set device properties
+service vendor.set_vendor_device_prop /vendor/bin/set_vendor_device_prop
+    class early_hal
+    group root
+    user root
+    oneshot
+
 # Suspend blocker
 service suspend_blocker /vendor/bin/suspend_blocker
     class early_hal # Start together with system_suspend HAL
     group system
     user root
+
+# USB
+on property:ro.vendor.device.soc_family=msm8953
+    setprop sys.usb.controller 7000000.usb

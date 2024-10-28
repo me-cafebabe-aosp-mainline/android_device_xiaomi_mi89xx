@@ -1,0 +1,7 @@
+cc_binary {
+    name: "set_vendor_device_prop",
+    srcs: ["set_vendor_device_prop.cpp"],
+    shared_libs: ["libbase"],
+    recovery_available: true,
+    vendor: true,
+}

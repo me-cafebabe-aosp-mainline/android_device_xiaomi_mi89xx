@@ -61,8 +61,7 @@ BOARD_KERNEL_CMDLINE := \
     printk.devkmsg=on \
     rw \
     androidboot.boot_devices=soc@0/7824900.mmc \
-    androidboot.fstab_suffix=mi89xx \
-    androidboot.hardware=mi8953 \
+    androidboot.hardware=mi89xx \
     androidboot.init_fatal_reboot_target=recovery \
     androidboot.selinux=permissive
 

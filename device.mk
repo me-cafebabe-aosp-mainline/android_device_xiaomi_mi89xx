@@ -62,7 +62,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/fstab/fstab.mi89xx:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.mi89xx \
     $(LOCAL_PATH)/configs/init/init.common.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.common.usb.rc \
-    $(LOCAL_PATH)/configs/init/init.mi8953.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.mi8953.rc \
     $(LOCAL_PATH)/configs/init/init.mi89xx.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.mi89xx.rc \
     $(LOCAL_PATH)/configs/init/ueventd.rc:$(TARGET_COPY_OUT_VENDOR)/etc/ueventd.rc
 
@@ -107,12 +106,16 @@ PRODUCT_COPY_FILES += \
 
 # Recovery
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/init/init.recovery.mi8953.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.mi8953.rc \
     $(LOCAL_PATH)/configs/init/init.recovery.mi89xx.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.mi89xx.rc \
     $(LOCAL_PATH)/configs/init/ueventd.rc:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/etc/ueventd.rc
 
 # Scoped Storage
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
+
+# Set device properties
+PRODUCT_PACKAGES += \
+    set_vendor_device_prop \
+    set_vendor_device_prop.recovery
 
 # Shipping API level
 PRODUCT_SHIPPING_API_LEVEL := 33

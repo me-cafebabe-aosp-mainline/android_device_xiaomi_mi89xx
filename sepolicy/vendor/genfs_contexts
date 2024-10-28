@@ -1,0 +1,2 @@
+# DeviceTree
+genfscon sysfs /firmware/devicetree/base/compatible		u:object_r:vendor_sysfs_dt_compatible:s0
