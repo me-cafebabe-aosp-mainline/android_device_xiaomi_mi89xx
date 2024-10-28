@@ -23,9 +23,6 @@ TARGET_2ND_CPU_VARIANT := cortex-a53
 # Bootloader
 TARGET_NO_BOOTLOADER := true
 
-# Display
-TARGET_SCREEN_DENSITY := 280
-
 # Filesystem
 BOARD_EXT4_SHARE_DUP_BLOCKS :=
 TARGET_USERIMAGES_USE_F2FS := true
@@ -100,6 +97,7 @@ TARGET_SYSTEM_PROP := $(DEVICE_PATH)/configs/properties/system.prop
 TARGET_VENDOR_PROP := $(DEVICE_PATH)/configs/properties/vendor.prop
 
 # Recovery
+TARGET_RECOVERY_DENSITY := xhdpi
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/configs/fstab/fstab.mi89xx
 TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 

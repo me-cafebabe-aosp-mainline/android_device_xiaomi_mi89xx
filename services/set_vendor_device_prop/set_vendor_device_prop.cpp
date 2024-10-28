@@ -7,13 +7,46 @@
 #include <android-base/properties.h>
 #include <android-base/strings.h>
 
+#ifndef ARRAY_SIZE
+#define ARRAY_SIZE(x) (sizeof(x) / sizeof((x)[0]))
+#endif
+
 using android::base::SetProperty;
 using android::base::StartsWith;
 
+typedef struct device_info {
+    std::string codename;
+    unsigned int lcd_density;
+} device_info_t;
+
 const std::string kDtCompatiblePath = "/sys/firmware/devicetree/base/compatible";
 const std::string kPropCodename = "ro.vendor.device.codename";
+const std::string kPropLcdDensity = "ro.vendor.device.lcd_density";
 const std::string kPropSoc = "ro.vendor.device.soc";
 const std::string kPropSocFamily = "ro.vendor.device.soc_family";
+
+const device_info_t device_info_table[] = {
+        // clang-format off
+
+    // Mi8917
+    {"riva", 280},
+    {"rolex", 280},
+    {"tiare", 280},
+    {"ugglite", 260},
+
+    // Mi8937
+    {"land", 280},
+    {"prada", 280},
+    {"santoni", 280},
+    {"ugg", 260},
+
+    // Xiaomi MSM8953
+    {"oxygen", 342},
+    {"uter", 400},
+    {"vince", 440},
+
+        // clang-format on
+};
 
 std::unordered_map<std::string, std::string> kSocFamilyMap = {
         // clang-format off
@@ -103,6 +136,19 @@ int main() {
             ret &= SetProperty(kPropSocFamily, device_soc_family);
             break;
         }
+    }
+
+    bool have_set_device_specific_properties = false;
+    for (int i = 0; i < ARRAY_SIZE(device_info_table); i++) {
+        if (device_codename == device_info_table[i].codename) {
+            ret &= SetProperty(kPropLcdDensity, std::to_string(device_info_table[i].lcd_density));
+            have_set_device_specific_properties = true;
+            break;
+        }
+    }
+
+    if (!have_set_device_specific_properties) {
+        ret &= SetProperty(kPropLcdDensity, "320");
     }
 
     return (!device_codename.empty() && !device_soc.empty() && !device_soc_family.empty() &&
