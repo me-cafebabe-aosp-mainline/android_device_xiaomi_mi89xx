@@ -1,1 +1,2 @@
 get_prop(vendor_init, vendor_device_prop)
+set_prop(vendor_init, vendor_graphics_prop)

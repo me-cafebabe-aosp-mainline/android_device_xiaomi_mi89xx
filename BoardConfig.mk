@@ -28,6 +28,11 @@ BOARD_EXT4_SHARE_DUP_BLOCKS :=
 TARGET_USERIMAGES_USE_F2FS := true
 TARGET_USERIMAGES_USE_EXT4 := true
 
+# Graphics (Mesa)
+BOARD_MESA3D_USES_MESON_BUILD := true
+BOARD_MESA3D_GALLIUM_DRIVERS := freedreno
+BOARD_MESA3D_VULKAN_DRIVERS := freedreno
+
 # Graphics (Swiftshader)
 include device/google/cuttlefish/shared/swiftshader/BoardConfig.mk
 
@@ -109,8 +114,12 @@ VENDOR_SECURITY_PATCH = $(PLATFORM_SECURITY_PATCH)
 
 # SELinux
 BOARD_VENDOR_SEPOLICY_DIRS += \
-    $(DEVICE_PATH)/sepolicy/vendor
+    $(DEVICE_PATH)/sepolicy/vendor \
+    device/google/cuttlefish/shared/virgl/sepolicy \
+    device/linaro/dragonboard/shared/graphics/minigbm_msm/sepolicy \
+    external/minigbm/cros_gralloc/sepolicy
 
 # VINTF
 DEVICE_MANIFEST_FILE := \
-    $(DEVICE_PATH)/configs/vintf/manifest.xml
+    $(DEVICE_PATH)/configs/vintf/manifest.xml \
+    $(DEVICE_PATH)/configs/vintf/manifest_display_$(TARGET_DISPLAY_USE).xml

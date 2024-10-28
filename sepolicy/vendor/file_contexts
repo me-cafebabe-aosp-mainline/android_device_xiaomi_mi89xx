@@ -13,5 +13,9 @@
 /vendor/bin/set_vendor_device_prop					u:object_r:vendor_set_vendor_device_prop_exec:s0
 /vendor/bin/suspend_blocker						u:object_r:suspend_blocker_exec:s0
 
+# Same Process HAL
+/vendor/lib(64)?/hw/vulkan\.freedreno\.so				u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/libgallium_dri\.so					u:object_r:same_process_hal_file:s0
+
 # Serial console
 /dev/ttyMSM[0-9]+		u:object_r:serial_device:s0

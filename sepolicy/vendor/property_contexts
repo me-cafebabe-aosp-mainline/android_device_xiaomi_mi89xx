@@ -1,1 +1,6 @@
-ro.vendor.device.	u:object_r:vendor_device_prop:s0
+# Device
+ro.vendor.device.		u:object_r:vendor_device_prop:s0
+
+# Graphics
+ro.vendor.graphics		u:object_r:vendor_graphics_prop:s0
+ro.vendor.graphics.		u:object_r:vendor_graphics_prop:s0
