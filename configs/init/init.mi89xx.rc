@@ -16,6 +16,12 @@ service vendor.set_vendor_device_prop /vendor/bin/set_vendor_device_prop
     user root
     oneshot
 
+on property:ro.vendor.device.lcd_density=*
+    setprop ro.sf.lcd_density ${ro.vendor.device.lcd_density}
+
+on property:ro.sf.lcd_density=*
+    restart surfaceflinger
+
 # Suspend blocker
 service suspend_blocker /vendor/bin/suspend_blocker
     class early_hal # Start together with system_suspend HAL
