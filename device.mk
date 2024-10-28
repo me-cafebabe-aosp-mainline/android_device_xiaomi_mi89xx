@@ -61,10 +61,7 @@ PRODUCT_PACKAGES += \
 # Graphics (Composer)
 ifeq ($(TARGET_DISPLAY_USE),drm)
 PRODUCT_PACKAGES += \
-    android.hardware.graphics.composer@2.4-service \
-    hwcomposer.drm
-PRODUCT_VENDOR_PROPERTIES += \
-    ro.hardware.hwcomposer=drm
+    android.hardware.graphics.composer@2.1-service.drmfb
 else ifeq ($(TARGET_DISPLAY_USE),fb)
 PRODUCT_PACKAGES += \
     android.hardware.graphics.composer@2.1-service
