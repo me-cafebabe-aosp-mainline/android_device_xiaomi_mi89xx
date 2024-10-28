@@ -8,6 +8,7 @@
 /dev/block/by-name/userdata	u:object_r:userdata_block_device:s0
 
 # Executables
+/vendor/bin/hw/android\.hardware\.light-service\.mi89xx			u:object_r:hal_light_default_exec:s0
 /vendor/bin/hw/android\.hardware\.gatekeeper@1\.0-service.software	u:object_r:hal_gatekeeper_default_exec:s0
 /vendor/bin/suspend_blocker						u:object_r:suspend_blocker_exec:s0
 
