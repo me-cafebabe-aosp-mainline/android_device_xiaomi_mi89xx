@@ -126,6 +126,9 @@ PRODUCT_PACKAGES += \
     android.hardware.light-service.mi89xx
 
 # Overlays
+DEVICE_PACKAGE_OVERLAYS += \
+    $(LOCAL_PATH)/overlays/overlay
+
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
 # Permissions
