@@ -53,6 +53,9 @@ TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_SOURCE := kernel/xiaomi/mi89xx
 
 BOARD_KERNEL_APPEND_DTBS := \
+    qcom/msm8917-xiaomi-*.dtb \
+    qcom/msm8937-xiaomi-*.dtb \
+    qcom/msm8940-xiaomi-*.dtb \
     qcom/msm8953-xiaomi-mido.dtb \
     qcom/msm8953-xiaomi-oxygen.dtb \
     qcom/msm8953-xiaomi-uter.dtb \
@@ -76,6 +79,7 @@ BOARD_KERNEL_CMDLINE := \
 TARGET_KERNEL_CONFIG := \
     gki_defconfig \
     lineageos/qcom-msm8937_53.config \
+    lineageos/xiaomi-mi89x7.config \
     lineageos/xiaomi-mido.config \
     lineageos/xiaomi-oxygen.config \
     lineageos/xiaomi-uter.config \
