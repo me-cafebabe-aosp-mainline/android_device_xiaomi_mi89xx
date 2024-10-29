@@ -1,5 +1,5 @@
 # Graphics
-ro.vendor.graphics?=mesa_swrast
+ro.vendor.graphics?=mesa
 
 # Media
 media.c2.hal.selection=aidl
