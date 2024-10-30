@@ -9,3 +9,7 @@ get_prop(vendor_init, vendor_usb_prop)
 allow set_udc vendor_shell_exec:file rx_file_perms;
 allow set_udc vendor_toolbox_exec:file rx_file_perms;
 allow set_udc sysfs_udc:dir { open read search };
+
+recovery_only(`
+    domain_trans(init, rootfs, set_udc)
+')
