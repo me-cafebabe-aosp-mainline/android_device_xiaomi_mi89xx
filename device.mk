@@ -191,6 +191,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_ENABLE_UFFD_GC := true
 
 # USB
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/scripts/set_udc.sh:$(TARGET_COPY_OUT_VENDOR)/bin/set_udc.sh
+
 PRODUCT_PACKAGES += \
     android.hardware.usb@1.3-service.basic
 
