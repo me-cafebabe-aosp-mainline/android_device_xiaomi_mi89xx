@@ -1,5 +1,5 @@
 # Graphics
-ro.vendor.graphics?=mesa
+ro.vendor.graphics?=mesa_swrast
 
 # Media
 media.c2.hal.selection=aidl
@@ -8,3 +8,7 @@ debug.stagefright.c2inputsurface=-1
 
 # Incremental FS
 ro.incremental.enable=1
+
+# TMP
+ro.config.low_ram=true
+ro.hw_timeout_multiplier=50

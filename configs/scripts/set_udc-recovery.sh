@@ -15,3 +15,7 @@
 UDC_ADDRESS=7000000
 UDC=`/system/bin/ls /sys/class/udc/ | /system/bin/grep $UDC_ADDRESS`
 setprop sys.usb.controller $UDC
+
+# TMP
+echo set_udc-recovery.sh > /dev/kmsg
+/system/bin/ls /sys/class/udc/ > /dev/kmsg
