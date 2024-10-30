@@ -161,7 +161,8 @@ PRODUCT_COPY_FILES += \
 # Recovery
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/init/init.recovery.mi89xx.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.mi89xx.rc \
-    $(LOCAL_PATH)/configs/init/ueventd.rc:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/etc/ueventd.rc
+    $(LOCAL_PATH)/configs/init/ueventd.rc:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/etc/ueventd.rc \
+    $(LOCAL_PATH)/configs/scripts/set_udc-recovery.sh:$(TARGET_COPY_OUT_RECOVERY)/root/system/bin/set_udc-recovery.sh
 
 # Scoped Storage
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
