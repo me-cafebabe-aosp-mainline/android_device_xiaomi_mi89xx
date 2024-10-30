@@ -12,6 +12,6 @@
 # on-board USB controller from /sys/class/udc instead.
 
 # Searching for db845c's DWC3 UDC explicitly
-UDC_ADDRESS=a600000
+UDC_ADDRESS=7000000
 UDC=`/vendor/bin/ls /sys/class/udc/ | /vendor/bin/grep $UDC_ADDRESS`
 setprop vendor.usb.controller $UDC
